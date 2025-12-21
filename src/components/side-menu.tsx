@@ -124,9 +124,11 @@ export function SideMenu() {
                                 <div className="flex gap-4 justify-center">
                                     {
                                         contacts.map((contact) => (
-                                            <DrawerClose key={contact.name}>
-                                                <Button variant="outline" className="w-16 h-16 rounded-full">
-                                                    <contact.icon className="w-24 h-24" />
+                                            <DrawerClose key={contact.name} asChild>
+                                                <Button variant="outline" className="w-16 h-16 rounded-full p-0" asChild>
+                                                    <a href={contact.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full">
+                                                        <contact.icon size={32} />
+                                                    </a>
                                                 </Button>
                                             </DrawerClose>
                                         ))
