@@ -4,14 +4,13 @@ import {
     SidebarFooter,
     SidebarGroup,
     SidebarGroupContent,
-    SidebarGroupLabel,
     SidebarHeader,
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
     SidebarProvider,
 } from "@/components/ui/sidebar"
-import { IconCode, IconCopyright, IconLayoutSidebarLeftCollapseFilled, IconLayoutSidebarRightCollapse, IconSettings, IconUser } from "@tabler/icons-react"
+import { IconCode, IconCopyright, IconLayoutSidebarLeftCollapseFilled, IconLayoutSidebarRightCollapse, IconUser } from "@tabler/icons-react"
 import { useState } from "react"
 import { Button } from "./ui/button"
 import { useIsMobile } from "@/hooks/use-mobile"
