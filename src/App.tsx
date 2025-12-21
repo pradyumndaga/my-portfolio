@@ -1,9 +1,21 @@
-export function App() {
-  return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="font-medium">Hello World</div>
-    </div>
-  )
+import { createRouter, RouterProvider } from "@tanstack/react-router";
+import { ThemeProvider } from "./components/theme-provider";
+import { routeTree } from "./routeTree.gen";
+
+const router = createRouter({ routeTree })
+
+declare module '@tanstack/react-router' {
+    interface Register {
+        router: typeof router
+    }
 }
 
-export default App
+export function App() {
+    return (
+        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+            <RouterProvider router={router} />
+        </ThemeProvider>
+    );
+}
+
+export default App;
