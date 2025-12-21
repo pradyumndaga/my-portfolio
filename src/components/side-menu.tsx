@@ -125,10 +125,10 @@ export function SideMenu() {
                                     {
                                         contacts.map((contact) => (
                                             <DrawerClose key={contact.name} asChild>
-                                                <Button variant="outline" className="w-16 h-16 rounded-full p-0" asChild>
-                                                    <a href={contact.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full">
-                                                        <contact.icon size={32} />
-                                                    </a>
+                                                <Button variant="outline" className="w-16 h-16 rounded-full p-0" render={
+                                                    <a href={contact.url} target="_blank" rel="noopener noreferrer" />
+                                                }>
+                                                    <contact.icon size={32} />
                                                 </Button>
                                             </DrawerClose>
                                         ))
