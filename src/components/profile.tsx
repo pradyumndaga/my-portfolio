@@ -51,8 +51,8 @@ export const Profile = () => {
     ];
     return (
         <>
-            <div className="min-h-full flex items-start md:items-center justify-center pt-12 pb-8 px-4">
-                <Card className="max-w-4xl w-full relative overflow-hidden bg-card/50 backdrop-blur-md">
+            <div className="min-h-full flex items-start md:items-center justify-center pt-12 pb-8">
+                <Card className=" w-full overflow-hidden bg-card/50 backdrop-blur-md">
                     <CardHeader className="flex flex-col-reverse items-center gap-6">
                         <div className="flex flex-col gap-1 text-center">
                             <CardTitle className="text-3xl md:text-5xl font-bold">Pradyumn Daga</CardTitle>
