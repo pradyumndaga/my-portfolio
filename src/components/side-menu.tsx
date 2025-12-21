@@ -10,11 +10,12 @@ import {
     SidebarMenuItem,
     SidebarProvider,
 } from "@/components/ui/sidebar"
-import { IconCode, IconCopyright, IconLayoutSidebarLeftCollapseFilled, IconLayoutSidebarRightCollapse, IconUser } from "@tabler/icons-react"
+import { IconBrandGithub, IconBrandLinkedin, IconCode, IconCopyright, IconLayoutSidebarLeftCollapseFilled, IconLayoutSidebarRightCollapse, IconMail, IconSend, IconUser } from "@tabler/icons-react"
 import { useState } from "react"
 import { Button } from "./ui/button"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { Link, useMatchRoute } from "@tanstack/react-router"
+import { DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose, Drawer } from "./ui/drawer"
 
 // Menu items.
 const items = [
@@ -34,6 +35,24 @@ const items = [
     //     url: "#",
     //     icon: IconSettings,
     // },
+]
+
+const contacts = [
+    {
+        name: "Email",
+        url: "mailto:pradyumndaga28@gmail.com",
+        icon: IconMail,
+    },
+    {
+        name: "Linkedin",
+        url: "https://www.linkedin.com/in/pradyumn-daga-7642a213a/",
+        icon: IconBrandLinkedin,
+    },
+    {
+        name: "Github",
+        url: "https://github.com/pradyumndaga",
+        icon: IconBrandGithub,
+    },
 ]
 
 export function SideMenu() {
@@ -83,6 +102,39 @@ export function SideMenu() {
                     </SidebarGroup>
                 </SidebarContent>
                 <SidebarFooter>
+                    <Drawer>
+                        <div className="flex items-center gap-2 w-full justify-center" >
+                            <DrawerTrigger className="flex items-center gap-2 bg-blue-500 text-white p-2 rounded-md">
+                                <SidebarMenuButton tooltip="Contact" render={<a href="#" />}>
+                                    <IconSend size={20} />
+                                    <span className="text-lg">Contact</span>
+                                </SidebarMenuButton>
+                            </DrawerTrigger>
+                        </div>
+                        <DrawerContent>
+                            <DrawerHeader>
+                                <DrawerTitle>Contact me:</DrawerTitle>
+                                <DrawerDescription>Choose you means to communicate</DrawerDescription>
+                            </DrawerHeader>
+                            <DrawerFooter>
+                                {/* <Button>Submit</Button>
+                                <DrawerClose>
+                                    <Button variant="outline">Cancel</Button>
+                                </DrawerClose> */}
+                                <div className="flex gap-4 justify-center">
+                                    {
+                                        contacts.map((contact) => (
+                                            <DrawerClose key={contact.name}>
+                                                <Button variant="outline" className="w-16 h-16 rounded-full">
+                                                    <contact.icon className="w-24 h-24" />
+                                                </Button>
+                                            </DrawerClose>
+                                        ))
+                                    }
+                                </div>
+                            </DrawerFooter>
+                        </DrawerContent>
+                    </Drawer>
                     <p className="flex items-center gap-2 justify-center group-data-[collapsible=icon]:hidden"> <IconCopyright /> 2026 Pradyumn</p>
                 </SidebarFooter>
             </Sidebar>
