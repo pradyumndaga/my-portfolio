@@ -1,7 +1,6 @@
 import { Badge } from "./ui/badge";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./ui/card"
 import profileImg from "../assets/profile.jpeg"
-import { DottedGlowBackground } from "./ui/dotted-glow-background";
 
 export const Profile = () => {
     const badges = [
@@ -57,20 +56,6 @@ export const Profile = () => {
                 <Card className=" w-full overflow-hidden bg-card/50 backdrop-blur-md">
                     <CardHeader className="flex flex-col-reverse items-center gap-6">
                         <div className="flex flex-col gap-1 text-center">
-                            <DottedGlowBackground
-                                className="pointer-events-none mask-radial-to-90% mask-radial-at-center opacity-20 dark:opacity-100"
-                                opacity={1}
-                                gap={10}
-                                radius={1.6}
-                                colorLightVar="--color-neutral-500"
-                                glowColorLightVar="--color-neutral-600"
-                                colorDarkVar="--color-neutral-500"
-                                glowColorDarkVar="--color-sky-800"
-                                backgroundOpacity={0}
-                                speedMin={0.3}
-                                speedMax={1.6}
-                                speedScale={1}
-                            />
                             <CardTitle className="text-3xl md:text-5xl font-bold">Pradyumn Daga</CardTitle>
                             <CardDescription className="text-xl md:text-3xl">Frontend Engineer</CardDescription>
                         </div>
