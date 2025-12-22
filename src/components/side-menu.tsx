@@ -10,7 +10,7 @@ import {
     SidebarMenuItem,
     SidebarProvider,
 } from "@/components/ui/sidebar"
-import { IconBrandGithub, IconBrandLinkedin, IconCode, IconCopyright, IconLayoutSidebarLeftCollapseFilled, IconLayoutSidebarRightCollapse, IconMail, IconSend, IconUser } from "@tabler/icons-react"
+import { IconBrandGithub, IconBrandLinkedin, IconCode, IconCopyright, IconLayoutSidebarLeftCollapseFilled, IconLayoutSidebarRightCollapse, IconMail, IconPhoneCall, IconSend, IconUser } from "@tabler/icons-react"
 import { useState } from "react"
 import { Button } from "./ui/button"
 import { useIsMobile } from "@/hooks/use-mobile"
@@ -52,7 +52,7 @@ const contacts = [
         name: "Github",
         url: "https://github.com/pradyumndaga",
         icon: IconBrandGithub,
-    },
+    }
 ]
 
 export function SideMenu() {
@@ -113,8 +113,12 @@ export function SideMenu() {
                         </div>
                         <DrawerContent>
                             <DrawerHeader>
-                                <DrawerTitle>Contact me:</DrawerTitle>
-                                <DrawerDescription>Choose you means to communicate</DrawerDescription>
+                                <DrawerTitle>Feel free to Contact me!</DrawerTitle>
+                                <DrawerDescription className=" mt-2 flex items-center justify-center gap-2">
+                                    <a href="tel:+917044282111" className="flex items-center gap-2 hover:underline">
+                                        <IconPhoneCall /> +91 - 7044282111
+                                    </a>
+                                </DrawerDescription>
                             </DrawerHeader>
                             <DrawerFooter>
                                 {/* <Button>Submit</Button>
