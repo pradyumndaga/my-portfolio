@@ -59,11 +59,13 @@ export const Profile = () => {
                             <CardTitle className="text-3xl md:text-5xl font-bold">Pradyumn Daga</CardTitle>
                             <CardDescription className="text-xl md:text-3xl">Frontend Engineer</CardDescription>
                         </div>
-                        <img
-                            src={profileImg}
-                            alt="Pradyumn Daga"
-                            className="w-40 h-56 md:w-48 md:h-60 rounded-xl object-cover border-4 border-muted shadow-xl"
-                        />
+                        <div className="profile-img relative w-40 h-56 md:w-48 md:h-60 rounded-xl">
+                            <img
+                                src={profileImg}
+                                alt="Pradyumn Daga"
+                                className="relative z-10 w-full h-full rounded-xl object-cover border-4 border-muted shadow-xl"
+                            />
+                        </div>
                     </CardHeader>
                     <CardContent className="flex flex-col gap-4 mt-4">
                         <div className="prose prose-sm md:prose-lg dark:prose-invert max-w-2xl mx-auto text-center">

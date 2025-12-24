@@ -154,3 +154,40 @@
     scrollbar-color: var(--muted-foreground) transparent;
   }
 }
+
+@property --deg {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.profile-img::before,
+.profile-img::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: conic-gradient(from var(--deg) at center,
+      oklch(0.7 0.2 260),
+      oklch(0.4 0.3 260) 25%,
+      oklch(0.7 0.2 260) 50%,
+      oklch(0.4 0.3 260) 75%,
+      oklch(0.7 0.2 260) 100%);
+  border-radius: inherit;
+  z-index: 1;
+  animation: autoRotate 4s linear infinite;
+}
+
+.profile-img::after {
+  filter: blur(15px);
+  opacity: 0.8;
+  z-index: 0;
+}
+
+@keyframes autoRotate {
+  to {
+    --deg: 360deg;
+  }
+}
